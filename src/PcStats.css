@@ -1,0 +1,53 @@
+.canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 16px;
+
+    min-height: 60vh;
+    box-sizing: border-box;
+}
+
+.stat-item {
+    padding: 16px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.3);
+    box-sizing: border-box;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    strong {
+        display: block;
+        color: rgba(9, 9, 121, 1);
+        margin-bottom: 8px;
+    }
+}
+
+.container .stat-item:nth-child(2) {
+    grid-column: span 2;
+}
